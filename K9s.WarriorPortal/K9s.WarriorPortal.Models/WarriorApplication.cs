@@ -74,5 +74,7 @@ namespace K9s.WarriorPortal.Models
         public string EducationalDegrees { get; set; }
 
         public string Bio { get; set; }
+
+        public ApplicationStatus ApplicationStatus { get; set; }
     }
 }

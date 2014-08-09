@@ -20,8 +20,9 @@ namespace K9s.WarriorPortal.Web
 
             container.RegisterType<IDbContextFactory<WarriorPortalDbContext>, WarriorPortalDbContextFactory>();
 
+            container.RegisterType<IWarriorApplicationQueryService, WarriorApplicationQueryService>();
             container.RegisterType<IWarriorApplicationCommandService, WarriorApplicationCommandService>();
-
+            
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }

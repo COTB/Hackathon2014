@@ -48,8 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IWarriorApplicationCommandService.cs" />
+    <Compile Include="Contracts\IWarriorApplicationQueryService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WarriorApplicationCommandService.cs" />
+    <Compile Include="WarriorApplicationQueryService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\K9s.WarriorPortal.Models\K9s.WarriorPortal.Models.csproj">
