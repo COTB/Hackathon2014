@@ -1,0 +1,38 @@
+﻿@using PopForums.Controllers
+@model PopForums.Models.User
+@{
+    ViewBag.Title = PopForums.Resources.EmailUser;
+    Layout = "~/Areas/PopForums/Views/Shared/PopForumsMaster.cshtml";
+}
+
+<div id="TopBreadcrumb" class="navAbsolute">
+	<h1>@PopForums.Resources.EmailUser - @Model.Name</h1>
+	<p>
+		^ @Html.ActionLink(PopForums.Resources.Forums, "Index", ForumHomeController.Name, null, null)
+	</p>
+</div>
+
+@using (Html.BeginForm()) {
+<table class="account stripe">
+	<tr>
+		<td>@PopForums.Resources.To</td>
+		<td>@Model.Name</td>
+	</tr>
+	<tr>
+		<td>@PopForums.Resources.YourIP</td>
+		<td>@ViewBag.IP</td>
+	</tr>
+	<tr>
+		<td>@PopForums.Resources.Subject</td>
+		<td>@Html.TextBox("subject")</td>
+	</tr>
+	<tr>
+		<td>@PopForums.Resources.Text</td>
+		<td>@Html.TextArea("text")</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><input type="submit" value="@PopForums.Resources.SendEmailButton" /></td>
+	</tr>
+</table>
+}
