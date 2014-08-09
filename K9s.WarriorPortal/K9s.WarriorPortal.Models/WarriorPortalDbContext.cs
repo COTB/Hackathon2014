@@ -12,5 +12,7 @@ namespace K9s.WarriorPortal.Models
             : base(nameOrConnectionString)
         {            
         }
+
+        public DbSet<WarriorApplication> WarriorApplications { get; set; }
     }
 }

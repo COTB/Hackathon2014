@@ -1,6 +1,8 @@
 using System.Data.Entity.Infrastructure;
 using System.Web.Mvc;
 using K9s.WarriorPortal.Models;
+using K9s.WarriorPortal.Services;
+using K9s.WarriorPortal.Services.Contracts;
 using Microsoft.Practices.Unity;
 using Unity.Mvc5;
 
@@ -17,7 +19,9 @@ namespace K9s.WarriorPortal.Web
             // e.g. container.RegisterType<ITestService, TestService>();
 
             container.RegisterType<IDbContextFactory<WarriorPortalDbContext>, WarriorPortalDbContextFactory>();
-            
+
+            container.RegisterType<IWarriorApplicationCommandService, WarriorApplicationCommandService>();
+
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }
