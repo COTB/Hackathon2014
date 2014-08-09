@@ -2,15 +2,8 @@
     padding-top: 50px;
     padding-bottom: 20px;
 }
-@media screen {
-    .printonly {
-        display: none;
-    }
-}
-@media print {
-    .printonly {
-        display: inline-block;
-    }
+.print-footer {
+    page-break-after: always;
 }
 /* Set padding to keep content from hitting the edges */
 .body-content {
