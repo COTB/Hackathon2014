@@ -1,23 +1,40 @@
-﻿@{
-    var partials = new[] { "_Overview", /* application info, */ "_Bio" };
-}
-<div class="container">
+﻿<div class="container">
+    <h2>Warrior Application</h2>
 
-
-    <h2>APPLICATION FOR WARRIOR</h2>
-    @using (Html.BeginForm())
+    @using (Html.BeginForm(new { role = "form" }))
     {
-        for (int i = 0; i < partials.Length; i++)
-        {
-            var partialView = partials[i];
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><a href="#overview" role="tab" data-toggle="tab">Overview</a></li>
+            <li><a href="#bio" role="tab" data-toggle="tab">Bio</a></li>
+            <li><a href="#confirmAndSubmit" role="tab" data-toggle="tab">Review and Submit</a></li>
+        </ul>
 
-            @Html.Partial(partialView)
-            <div class="row visible-print print-footer">
-                <div class="col-xs-3"></div>
-                <div class="col-xs-6"></div>
-                <div class="col-xs-2">Initial Here_________</div>
-                <div class="col-xs-1">Page | @i</div>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="overview">
+                <div class="row">
+                    <div class="col-xs-12">
+                        @Html.Partial("_Overview")
+                    </div>
+                </div>
             </div>
-        }
+
+            <div class="tab-pane fade" id="bio">
+                <div class="row">
+                    <div class="col-xs-12">
+                        @Html.Partial("_Bio")
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-pane fade" id="confirmAndSubmit">
+                <div class="row">
+                    <div class="col-xs-12">
+                        @Html.Partial("_ConfirmAndSubmit")
+                    </div>
+                </div>
+            </div>
+        </div>
     }
 </div>
