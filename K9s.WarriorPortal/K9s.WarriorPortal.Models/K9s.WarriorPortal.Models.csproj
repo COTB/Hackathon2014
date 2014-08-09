@@ -48,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enum\MaritalStatus.cs" />
+    <Compile Include="Enum\MedicalBoardReview.cs" />
     <Compile Include="WarriorApplication.cs" />
     <Compile Include="WarriorPortalDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
